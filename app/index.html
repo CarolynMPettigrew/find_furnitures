@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="findFurnitureApp">
 <head>
     <link href='http://fonts.googleapis.com/css?family=Raleway:700' rel='stylesheet' type='text/css'>
 
@@ -153,59 +153,18 @@
         </div>
 
         <div class="col-sm-8 col-md-9">
-            <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="row" ng-controller="ProductController">
+                <div ng-repeat="product in products" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="thumbnail">
-                        <a href="#"><img src="sample_data/chair_1.jpg" alt="1" class="img-responsive product"></a>
+                        <a href="#"><img ng-src="{{product.img}}" alt="{{product.id}}" class="img-responsive product"></a>
 
                         <div class="caption">
-                            <h4 class="text-center">Krzesło czarne</h4>
+                            <h4 class="text-center">{{product.description}}</h4>
 
                             <p><a href="#" class="btn btn-default btn-sm">View »</a><a href="#"
-                                                                                       class="btn btn-primary btn-sm pull-right">200.00
+                                                                                       class="btn btn-primary btn-sm pull-right">{{product.price}}
                                 zł</a></p>
 
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="thumbnail">
-                        <a href="#"><img src="sample_data/chair_2.jpg" alt="2" class="img-responsive product"></a>
-
-                        <div class="caption">
-                            <h4 class="text-center">Krzesło MU5</h4>
-
-                            <p><a href="#" class="btn btn-default btn-sm">View »</a><a href="#"
-                                                                                       class="btn btn-primary btn-sm pull-right">200.00
-                                zł</a></p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="thumbnail">
-                        <a href="#"><img src="sample_data/chair_3.jpg" alt="3" class="img-responsive product"></a>
-
-                        <div class="caption">
-                            <h4 class="text-center">KRZESŁA skośne</h4>
-
-                            <p><a href="#" class="btn btn-default btn-sm">View »</a><a href="#"
-                                                                                       class="btn btn-primary btn-sm pull-right">300.00
-                                zł</a></p>
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="thumbnail">
-                        <a href="#"><img src="sample_data/chair_4.jpg" alt="4" class="img-responsive product"></a>
-
-                        <div class="caption">
-                            <h4 class="text-center">Krzesła skośne</h4>
-
-                            <p><a href="#" class="btn btn-default btn-sm">View »</a><a href="#"
-                                                                                       class="btn btn-primary btn-sm pull-right">200.00
-                                zł</a></p>
                         </div>
                     </div>
                 </div>
@@ -218,17 +177,29 @@
 <!-- Site footer -->
 <div class="footer">
     <div class="container">
-        <p class="pull-right">
-            <a href="#" target="_self">Back to top</a>
-        </p>
-        <a href="http://nprogramming.wordpress.com">nprogramming.wordpress.com</a> © 2014
+        <div class="row"><p class="pull-right">
+                    <a href="#" target="_self">Back to top</a>
+                </p>
+                <a href="http://nprogramming.wordpress.com">nprogramming.wordpress.com</a> © 2014</div>
+        <div class="row">
+            <div>Find Furniture app: v<span app-version></span></div>
+        </div>
     </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script src="js/site.js"></script>
-<!-- Bootstrap core JavaScript
-    ================================================== -->
+<!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+  -->
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular/angular-route.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/services.js"></script>
+  <!--<script src="js/controllers.js"></script>-->
+  <script src="js/filters.js"></script>
+  <script src="js/directives.js"></script>
+<script src="js/controllers/ProductController.js"></script>
 </body>
 </html>
