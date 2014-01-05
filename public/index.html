@@ -17,7 +17,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/yeti-theme.bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/site.css" />
+    <link rel="stylesheet" href="css/site.css"/>
 
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
@@ -47,7 +47,7 @@
                 <input type="text" class="form-control col-lg-8" placeholder="Search">
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#"><span class="glyphicon glyphicon-log-in" ></span> Login</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
         </div>
     </div>
@@ -59,7 +59,8 @@
     <div class="jumbotron">
         <h3>Furnitures you are looking for</h3>
 
-        <p class="lead">On our page you could find any furniture you need. Here we group many offers from polish market.</p>
+        <p class="lead">On our page you could find any furniture you need. Here we group many offers from polish
+            market.</p>
     </div>
 
     <div class="row visible-md visible-lg">
@@ -100,92 +101,111 @@
     <hr/>
 
     <div class="row">
-        <div class="col-md-3">
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Categories</h3>
+        <div class="col-sm-4 col-md-3">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <a class="panel-title" data-toggle="collapse" data-parent="#accordion" href="#collapseCategories">Categories</a>
+                    </div>
+                    <div id="collapseCategories" class="panel-collapse collapse in"><div class="panel-body">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">Anterooms</a></li>
+                            <li><a href="#">Armchairs</a></li>
+                            <li><a href="#">Bar</a></li>
+                            <li><a href="#">Beds</a></li>
+                            <li><a href="#">Benches</a></li>
+                            <li><a href="#">Bookcase</a></li>
+                            <li><a href="#">Chairs</a></li>
+                            <li><a href="#">Chests</a></li>
+                            <li><a href="#">Desks</a></li>
+                            <li><a href="#">Others</a></li>
+                            <li><a href="#">Poufs</a></li>
+                            <li><a href="#">Shelves</a></li>
+                            <li><a href="#">Showcase</a></li>
+                            <li><a href="#">Sofas</a></li>
+                            <li><a href="#">Tables</a></li>
+                            <li><a href="#">Wall units / sets</a></li>
+                            <li><a href="#">Wardrobes</a></li>
+                        </ul>
+                    </div></div>
                 </div>
-                <div class="panel-body">
-                    <ul class="nav nav-pills nav-stacked">
-                        <li><a href="#">Anterooms</a></li>
-                        <li><a href="#">Armchairs</a></li>
-                        <li><a href="#">Bar</a></li>
-                        <li><a href="#">Beds</a></li>
-                        <li><a href="#">Benches</a></li>
-                        <li><a href="#">Bookcase</a></li>
-                        <li><a href="#">Chairs</a></li>
-                        <li><a href="#">Chests</a></li>
-                        <li><a href="#">Desks</a></li>
-                        <li><a href="#">Others</a></li>
-                        <li><a href="#">Poufs</a></li>
-                        <li><a href="#">Shelves</a></li>
-                        <li><a href="#">Showcase</a></li>
-                        <li><a href="#">Sofas</a></li>
-                        <li><a href="#">Tables</a></li>
-                        <li><a href="#">Wall units / sets</a></li>
-                        <li><a href="#">Wardrobes</a></li>
-                    </ul>
+                <hr/>
+                <div class="panel panel-success">
+                    <div class="panel-heading">
+                        <a class="panel-title"  data-toggle="collapse" data-parent="#accordion" href="#collapseRooms">Rooms</a>
+                    </div>
+                    <div id="collapseRooms" class="panel-collapse collapse in"><div class="panel-body">
+                        <ul class="nav nav-pills nav-stacked">
+                            <li><a href="#">Anteroom</a></li>
+                            <li><a href="#">Bathroom</a></li>
+                            <li><a href="#">Bedroom</a></li>
+                            <li><a href="#">Dining room</a></li>
+                            <li><a href="#">Garden Furniture</a></li>
+                            <li><a href="#">Kids & Teenagers</a></li>
+                            <li><a href="#">Kitchen</a></li>
+                            <li><a href="#">Livingroom</a></li>
+                            <li><a href="#">Office</a></li>
+                        </ul>
+                    </div></div>
                 </div>
-            </div>
-            <hr />
-            <div class="panel panel-success">
-                <div class="panel-heading">
-                    <h3 class="panel-title">Rooms</h3>
-                </div>
-                <div class="panel-body">
-                    <ul class="nav nav-pills nav-stacked">
-                        <li><a href="#">Anteroom</a></li>
-                        <li><a href="#">Bathroom</a></li>
-                        <li><a href="#">Bedroom</a></li>
-                        <li><a href="#">Dining room</a></li>
-                        <li><a href="#">Garden Furniture</a></li>
-                        <li><a href="#">Kids & Teenagers</a></li>
-                        <li><a href="#">Kitchen</a></li>
-                        <li><a href="#">Livingroom</a></li>
-                        <li><a href="#">Office</a></li>
-                    </ul>
-                </div>
+                <hr/>
             </div>
         </div>
 
-        <div class="col-md-9">
+        <div class="col-sm-8 col-md-9">
             <div class="row">
-                <div class="col-sm-6 col-md-3">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="thumbnail">
                         <a href="#"><img src="sample_data/chair_1.jpg" alt="1" class="img-responsive product"></a>
+
                         <div class="caption">
-                            <h4>Krzesło czarne</h4>
-                            <p><a href="#" class="btn btn-primary btn-sm" role="button">View »</a> <span class="pull-right">200.00 zł</span></p>
+                            <h4 class="text-center">Krzesło czarne</h4>
+
+                            <p><a href="#" class="btn btn-primary btn-sm">View »</a><a href="#"
+                                                                                       class="btn btn-default btn-sm pull-right">200.00
+                                zł</a></p>
 
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="thumbnail">
                         <a href="#"><img src="sample_data/chair_2.jpg" alt="2" class="img-responsive product"></a>
+
                         <div class="caption">
-                            <h4>Krzesło MU5</h4>
-                            <p><a href="#" class="btn btn-primary btn-sm" role="button">View »</a> <span class="pull-right">200.00 zł</span></p>
+                            <h4 class="text-center">Krzesło MU5</h4>
+
+                            <p><a href="#" class="btn btn-primary btn-sm">View »</a><a href="#"
+                                                                                       class="btn btn-default btn-sm pull-right">200.00
+                                zł</a></p>
 
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="thumbnail">
                         <a href="#"><img src="sample_data/chair_3.jpg" alt="3" class="img-responsive product"></a>
+
                         <div class="caption">
-                            <h4>KRZESŁA skośne</h4>
-                            <p><a href="#" class="btn btn-primary btn-sm" role="button">View »</a> <span class="pull-right">300.00 zł</span></p>
+                            <h4 class="text-center">KRZESŁA skośne</h4>
+
+                            <p><a href="#" class="btn btn-primary btn-sm">View »</a><a href="#"
+                                                                                       class="btn btn-default btn-sm pull-right">300.00
+                                zł</a></p>
 
                         </div>
                     </div>
                 </div>
-                <div class="col-sm-6 col-md-3">
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
                     <div class="thumbnail">
                         <a href="#"><img src="sample_data/chair_4.jpg" alt="4" class="img-responsive product"></a>
+
                         <div class="caption">
-                            <h4>Krzesła skośne</h4>
-                            <p><a href="#" class="btn btn-primary btn-sm" role="button">View »</a> <span class="pull-right">200.00 zł</span></p>
+                            <h4 class="text-center">Krzesła skośne</h4>
+
+                            <p><a href="#" class="btn btn-primary btn-sm">View »</a><a href="#"
+                                                                                       class="btn btn-default btn-sm pull-right">200.00
+                                zł</a></p>
                         </div>
                     </div>
                 </div>
