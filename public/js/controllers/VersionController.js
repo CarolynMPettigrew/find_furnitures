@@ -1,5 +1,5 @@
 "use strict";
 
 findFurnitureApp.controller('VersionController', function VersionController($scope) {
-    $scope.version = '0.3';
+    $scope.version = '0.4';
 });

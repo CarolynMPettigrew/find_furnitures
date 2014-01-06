@@ -1,5 +1,7 @@
 "use strict";
 
 findFurnitureApp.controller('CategoryController', function CategoryController($scope, categoryData) {
-    $scope.categories = categoryData.categories;
+    categoryData.getCategories(function(categories) {
+        $scope.categories = categories;
+    });
 });
