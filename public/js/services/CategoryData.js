@@ -1,15 +1,17 @@
-"use strict";
-
-findFurnitureApp.factory('categoryData', function($http, $log) {
+findFurnitureApp.factory('categoryData', function($http, $q) {
     return {
-        getCategories: function(successcb) {
-            $http({method: 'GET', url: '/api/categories'}).
-                success(function(data) { //, status, headers, config) {
-                    successcb(data);
+        getCategories: function() {
+            var deferred = $q.defer();
+
+            $http({method: 'GET', url: '/data/categories'}).
+                success(function(data) {
+                    deferred.resolve(data);
                 }).
-                error(function(data, status, headers, config) {
-                    $log.warn(data, status, headers, config);
+                error(function(data, status) {
+                    deferred.reject(status);
                 });
+
+            return deferred.promise;
         }
     };
 });

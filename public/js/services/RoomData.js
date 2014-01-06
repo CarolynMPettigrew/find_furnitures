@@ -1,15 +1,19 @@
 "use strict";
 
-findFurnitureApp.factory('roomData', function($http, $log) {
+findFurnitureApp.factory('roomData', function($http, $q) {
     return {
-        getRooms: function(successcb) {
-            $http({method: 'GET', url: '/api/rooms'}).
-                success(function(data){ //, status, headers, config) {
-                    successcb(data);
+        getRooms: function() {
+            var deferred = $q.defer();
+
+            $http({method: 'GET', url: '/data/rooms'}).
+                success(function(data) {
+                    deferred.resolve(data);
                 }).
-                error(function(data, status, headers, config) {
-                    $log.warn(data, status, headers, config);
+                error(function(data, status) {
+                    deferred.reject(status);
                 });
+
+            return deferred.promise;
         }
     };
 });

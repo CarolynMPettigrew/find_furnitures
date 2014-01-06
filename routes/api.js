@@ -1,12 +1,4 @@
-/*
-* Serve JSON to our AngularJS client
-*/
-
-exports.name = function (req, res) {
-    res.json({
-        name: 'Bob'
-    });
-};
+"use strict";
 
 exports.products = function (req, res) {
     res.json([
