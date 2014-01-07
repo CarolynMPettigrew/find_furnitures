@@ -1,72 +1,42 @@
 <div class="container">
 
-    <div ng-controller="CarouselCtrl" class="row visible-md visible-lg">
+    <div class="row visible-md visible-lg" ng-controller="CarouselCtrl">
         <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
             <carousel interval="myInterval">
                 <slide ng-repeat="slide in slides" active="slide.active">
-                    <img ng-src="{{slide.image}}" class="img-responsive" style="margin:auto;"  src="">
+                    <img ng-src="{{slide.image}}" src="">
                 </slide>
             </carousel>
         </div>
     </div>
     <!-- /row -->
+
     <hr/>
 
     <div class="row">
         <div class="col-sm-4 col-md-3">
-            <div ng-controller="PanelController" class="panel-group">
-                <div class="panel panel-success">
-                    <div class="panel-heading">
-                        <a class="panel-title" ng-click="toggleCategories()">Categories <span class="glyphicon glyphicon-list pull-right panel-list"></span></a>
-                    </div>
-                    <div collapse="isCategoriesCollapsed" class="panel-collapse">
-                        <div class="panel-body">
-                            <ul class="nav nav-pills nav-stacked">
-                                <li ng-repeat="category in categories">
-                                    <a ng-href="products?category={{category.name}}">{{category.name}}</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+            <div class="panel-group">
+                <div ng-controller="CategoryCtrl">
+                    <product-panel></product-panel>
                 </div>
                 <hr/>
-                <div class="panel panel-success">
-                    <div class="panel-heading">
-                        <a class="panel-title" ng-click="toggleRooms()">Rooms <span class="glyphicon glyphicon-list pull-right panel-list"></span></a>
-                    </div>
-                    <div collapse="isRoomsCollapsed" class="panel-collapse">
-                        <div class="panel-body">
-                            <ul class="nav nav-pills nav-stacked">
-                                <li ng-repeat="room in rooms">
-                                    <a ng-href="products?room={{room.name}}">{{room.name}}</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                <div ng-controller="RoomCtrl">
+                    <product-panel></product-panel>
                 </div>
                 <hr/>
-                <p class="text-center text-muted">FindFurniture © 2014</p>
+                <p class="text-center text-muted" ng-controller="AppVersionCtrl">{{appName}} © 2014</p>
             </div>
         </div>
 
         <div class="col-sm-8 col-md-9">
             <div class="row">
                 <div ng-repeat="product in products" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                    <div class="thumbnail">
-                        <a href="#"><img ng-src="{{product.img}}" alt="{{product.id}}" class="img-responsive product" src=""></a>
-
-                        <div class="caption">
-                            <h4 class="text-center">{{product.description}}</h4>
-                            <p>
-                                <a href="#" class="btn btn-default btn-sm">View »</a>
-                                <button ng-disabled="true" class="btn btn-primary btn-sm pull-right">{{product.price | currency}}</button>
-                            </p>
-                        </div>
-                    </div>
+                    <product-thumbnail></product-thumbnail>
                 </div>
             </div>
         </div>
     </div>
     <!-- /row -->
+
 </div>
 <!-- /container -->

@@ -1,0 +1,17 @@
+<div class="thumbnail">
+
+    <a href="#">
+        <img ng-src="{{product.img}}" alt="{{product.id}}" class="img-responsive product" src="">
+    </a>
+
+    <div class="caption">
+        <h4 class="text-center">{{product.description}}</h4>
+        <p>
+            <a href="#" class="btn btn-default btn-sm">View »</a>
+            <button ng-disabled="true" class="btn btn-primary btn-sm pull-right">
+                {{product.price | currency}}
+            </button>
+        </p>
+    </div>
+
+</div>
