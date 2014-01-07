@@ -5,7 +5,6 @@
  */
 
 var express = require('express'),
-    routes = require('./routes'),
     api = require('./routes/api'),
     http = require('http'),
     path = require('path');
@@ -19,13 +18,15 @@ var app = module.exports = express();
 
 // all environments
 app.set('port', process.env.PORT || 3000);
-app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(app.router);
+app.use(function(req, res) {
+    // Use res.sendfile, as it streams instead of reading the file into memory.
+    res.sendfile(__dirname + '/public/index.html');
+});
 
 // development only
 if (app.get('env') === 'development') {
@@ -41,18 +42,10 @@ if (app.get('env') === 'production') {
  * Routes
  */
 
-// serve index and view partials
-app.get('/', routes.index);
-app.get('/partials/:name', routes.partials);
-
 // JSON API
 app.get('/data/products', api.products);
 app.get('/data/categories', api.categories);
 app.get('/data/rooms', api.rooms);
-
-// redirect all others to the index (HTML5 history)
-app.get('*', routes.index);
-
 
 /**
  * Start Server
