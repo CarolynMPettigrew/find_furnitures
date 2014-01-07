@@ -7,6 +7,10 @@ var findFurnitureApp = angular.module('findFurnitureApp', ['ngRoute', 'ui.bootst
                 templateUrl: 'partials/products.html',
                 controller: 'ProductController'
             })
+            .when('/products', {
+                templateUrl: 'partials/products.html',
+                controller: 'ProductController'
+            })
             .when('/shops', {
                 templateUrl: 'partials/shops.html'
             })

@@ -27,7 +27,7 @@
 </head>
 <body style ng-cloak>
 
-<div ng-controller="NavigationController" class="navbar navbar-default navbar-fixed-top">
+<div ng-controller="NavCtrl" class="navbar navbar-default navbar-fixed-top">
 
     <div class="container">
 
@@ -47,15 +47,15 @@
         <div class="navbar-collapse collapse navbar-inverse-collapse" id="navbar-main">
 
             <ul class="nav navbar-nav">
-                <li class="active"><a ng-click="home()"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-                <li><a ng-click="shops()"><span class="glyphicon glyphicon-shopping-cart"></span> Shops</a></li>
-                <li><a ng-click="addProduct()"><span class="glyphicon glyphicon-plus"></span> Add Product</a></li>
+                <li class="{{isActive('home')}}"><a ng-click="home()"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li class="{{isActive('shops')}}"><a ng-click="shops()"><span class="glyphicon glyphicon-shopping-cart"></span> Shops</a></li>
+                <li class="{{isActive('addProduct')}}"><a ng-click="addProduct()"><span class="glyphicon glyphicon-plus"></span> Add Product</a></li>
             </ul>
             <form class="navbar-form navbar-left">
                 <input type="text" class="form-control col-lg-8" placeholder="Search">
             </form>
             <ul class="nav navbar-nav navbar-right">
-                <li><a ng-click="login()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li class="{{isActive('login')}}"><a ng-click="login()"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
             </ul>
 
         </div>
@@ -126,7 +126,7 @@
 <script src="js/controllers/ProductController.js"></script>
 <script src="js/controllers/CarouselCtrl.js"></script>
 <script src="js/controllers/VersionController.js"></script>
-<script src="js/controllers/NavigationController.js"></script>
+<script src="js/controllers/NavCtrl.js"></script>
 <script src="js/controllers/PanelController.js"></script>
 
 <!-- JQUERY ON READY -->

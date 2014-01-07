@@ -23,36 +23,36 @@ exports.products = function (req, res) {
 
 exports.categories = function (req, res) {
     res.json([
-        {action: '#', name: 'Anterooms'},
-        {action: '#', name: 'Armchairs'},
-        {action: '#', name: 'Bar'},
-        {action: '#', name: 'Beds'},
-        {action: '#', name: 'Benches'},
-        {action: '#', name: 'Bookcase'},
-        {action: '#', name: 'Chairs'},
-        {action: '#', name: 'Chests'},
-        {action: '#', name: 'Desks'},
-        {action: '#', name: 'Others'},
-        {action: '#', name: 'Poufs'},
-        {action: '#', name: 'Shelves'},
-        {action: '#', name: 'Showcase'},
-        {action: '#', name: 'Sofas'},
-        {action: '#', name: 'Tables'},
-        {action: '#', name: 'Wall units / sets'},
-        {action: '#', name: 'Wardrobes'}
+        {name: 'Anterooms'},
+        {name: 'Armchairs'},
+        {name: 'Bar'},
+        {name: 'Beds'},
+        {name: 'Benches'},
+        {name: 'Bookcase'},
+        {name: 'Chairs'},
+        {name: 'Chests'},
+        {name: 'Desks'},
+        {name: 'Others'},
+        {name: 'Poufs'},
+        {name: 'Shelves'},
+        {name: 'Showcase'},
+        {name: 'Sofas'},
+        {name: 'Tables'},
+        {name: 'Wall units / sets'},
+        {name: 'Wardrobes'}
     ]);
 };
 
 exports.rooms = function (req, res) {
     res.json([
-        {action: '#', name: 'Anteroom'},
-        {action: '#', name: 'Bathroom'},
-        {action: '#', name: 'Bedroom'},
-        {action: '#', name: 'Dining room'},
-        {action: '#', name: 'Garden Furniture'},
-        {action: '#', name: 'Kids & Teenagers'},
-        {action: '#', name: 'Kitchen'},
-        {action: '#', name: 'Livingroom'},
-        {action: '#', name: 'Office'}
+        {name: 'Anteroom'},
+        {name: 'Bathroom'},
+        {name: 'Bedroom'},
+        {name: 'Dining Room'},
+        {name: 'Garden Furniture'},
+        {name: 'Kids & Teenagers'},
+        {name: 'Kitchen'},
+        {name: 'Livingroom'},
+        {name: 'Office'}
     ]);
 };
