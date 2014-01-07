@@ -79,22 +79,9 @@
 
 <div ng-view></div>
 
-<!-- Site footer -->
-<div ng-controller="VersionController" class="footer">
-    <div class="container">
-        <div class="row">
-            <p class="pull-right"><a href="#" target="_self">Back to top</a></p>
-            <p><a href="http://nprogramming.wordpress.com">nprogramming.wordpress.com</a> © 2014</p>
-        </div>
-        <!-- /row -->
-        <div class="row">
-            <div >Find Furniture app: v<span>{{version}}</span></div>
-        </div>
-        <!-- /row -->
-    </div>
-    <!-- /container -->
-</div>
-<!-- /footer -->
+<div ng-include src="'partials/footer.html'"></div>
+
+<!-- JavaScript scripts -->
 
 <script src="https://code.jquery.com/jquery-2.0.3.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
