@@ -42,3 +42,6 @@ footer p {
 .panel-list {
     margin-top: 2px;
 }
+
+/* AngularJS and Bootstrap integration */
+.nav, .pagination, .carousel, .panel-heading a { cursor: pointer; }

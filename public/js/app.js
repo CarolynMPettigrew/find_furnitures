@@ -1,23 +1,23 @@
 'use strict';
 
-var findFurnitureApp = angular.module('findFurnitureApp', ['ngRoute'])
+var findFurnitureApp = angular.module('findFurnitureApp', ['ngRoute', 'ui.bootstrap'])
     .config(function($routeProvider, $locationProvider) {
         $routeProvider
-            .when('/products', {
+            .when('/', {
                 templateUrl: 'partials/products.html',
                 controller: 'ProductController'
             })
             .when('/shops', {
                 templateUrl: 'partials/shops.html'
             })
-            .when('/addProduct', {
+            .when('/add-product', {
                 templateUrl: 'partials/addProduct.html'
             })
             .when('/login', {
                 templateUrl: 'partials/login.html'
             })
             .otherwise({
-                redirectTo: "/products"
+                redirectTo: "/"
             });
 
         // configure html5 to get links working on jsfiddle

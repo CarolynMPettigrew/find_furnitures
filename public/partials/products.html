@@ -1,53 +1,25 @@
 <div class="container">
 
-    <!-- Jumbotron -->
-    <div class="jumbotron">
-        <h3>Furniture you are looking for</h3>
-        <p class="lead">On our page you could find any furniture you need.
-            Here we group many offers from the polish market.</p>
-    </div>
-    <!-- /jumbotron -->
-
-    <div class="row visible-md visible-lg ng-cloak" ng-cloak>
+    <div ng-controller="CarouselCtrl" class="row visible-md visible-lg">
         <div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
-            <div ng-controller="CarouselController" class="carousel slide" id="theCarousel" data-interval="5000">
-
-                <ol class="carousel-indicators">
-                    <li ng-repeat="image in images"
-                        data-target="#theCarousel"
-                        data-slide-to="{{image.id}}"
-                        class="{{image.status}}">
-                    </li>
-                </ol>
-
-                <div class="carousel-inner">
-                    <div ng-repeat="image in images" class="item {{image.status}}">
-                        <img ng-src="{{image.src}}" alt="{{image.id}}" class="img-responsive" src="">
-                    </div>
-                </div>
-
-                <a href="#theCarousel" class="carousel-control left" data-slide="prev"><span
-                        class="icon-prev"></span></a>
-                <a href="#theCarousel" class="carousel-control right" data-slide="next"><span
-                        class="icon-next"></span></a>
-            </div>
+            <carousel interval="myInterval">
+                <slide ng-repeat="slide in slides" active="slide.active">
+                    <img ng-src="{{slide.image}}" class="img-responsive" style="margin:auto;"  src="">
+                </slide>
+            </carousel>
         </div>
-
     </div>
     <!-- /row -->
     <hr/>
-</div>
-<!-- /container -->
 
-<div class="container">
-    <div class="row ng-cloak" ng-cloak>
+    <div class="row">
         <div class="col-sm-4 col-md-3">
-            <div class="panel-group">
+            <div ng-controller="PanelController" class="panel-group">
                 <div class="panel panel-success">
                     <div class="panel-heading">
-                        <a class="panel-title" data-toggle="collapse" href="#collapseCategories">Categories <span class="glyphicon glyphicon-list pull-right panel-list"></span></a>
+                        <a class="panel-title" ng-click="toggleCategories()">Categories <span class="glyphicon glyphicon-list pull-right panel-list"></span></a>
                     </div>
-                    <div id="collapseCategories" class="panel-collapse collapse">
+                    <div collapse="isCategoriesCollapsed" class="panel-collapse">
                         <div class="panel-body">
                             <ul class="nav nav-pills nav-stacked">
                                 <li ng-repeat="category in categories"><a ng-href="{{category.action}}">{{category.name}}</a></li>
@@ -58,9 +30,9 @@
                 <hr/>
                 <div class="panel panel-success">
                     <div class="panel-heading">
-                        <a class="panel-title"  data-toggle="collapse" href="#collapseRooms">Rooms <span class="glyphicon glyphicon-list pull-right panel-list"></span></a>
+                        <a class="panel-title" ng-click="toggleRooms()">Rooms <span class="glyphicon glyphicon-list pull-right panel-list"></span></a>
                     </div>
-                    <div id="collapseRooms" class="panel-collapse collapse in">
+                    <div collapse="isRoomsCollapsed" class="panel-collapse">
                         <div class="panel-body">
                             <ul class="nav nav-pills nav-stacked">
                                 <li ng-repeat="room in rooms"><a ng-href="{{room.action}}">{{room.name}}</a></li>
