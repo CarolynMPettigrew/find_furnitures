@@ -44,4 +44,4 @@ footer p {
 }
 
 /* AngularJS and Bootstrap integration */
-.nav, .pagination, .carousel, .panel-heading a { cursor: pointer; }
+.nav, .pagination, .carousel, .panel-heading, .navbar-header a { cursor: pointer; }
