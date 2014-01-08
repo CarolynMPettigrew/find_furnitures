@@ -1,11 +1,9 @@
 "use strict";
 
 findFurnitureApp.controller('CategoryCtrl',
-    function CategoryCtrl($scope, categoryData) {
+    function CategoryCtrl($scope, $location, $anchorScroll, categoryData) {
 
         $scope.panelName = 'Categories';
-        $scope.panelType = 'category';
-
         $scope.items = [];
 
         categoryData.getCategories().then(function(data) {
@@ -15,5 +13,9 @@ findFurnitureApp.controller('CategoryCtrl',
         $scope.isCollapsed = true;
         $scope.toggle = function() {
             $scope.isCollapsed = !$scope.isCollapsed;
+        };
+
+        $scope.applyFilter = function(item) {
+            $location.path('products').search('category=' + item.name);
         };
 });

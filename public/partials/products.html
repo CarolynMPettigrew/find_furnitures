@@ -11,27 +11,17 @@
     </div>
     <!-- /row -->
 
-    <hr/>
+    <hr />
 
     <div class="row">
         <div class="col-sm-4 col-md-3">
-            <div class="panel-group">
-                <div ng-controller="CategoryCtrl">
-                    <product-panel></product-panel>
-                </div>
-                <hr/>
-                <div ng-controller="RoomCtrl">
-                    <product-panel></product-panel>
-                </div>
-                <hr/>
-                <p class="text-center text-muted" ng-controller="AppVersionCtrl">{{appName}} © 2014</p>
-            </div>
+            <product-panel></product-panel>
         </div>
 
         <div class="col-sm-8 col-md-9">
             <div class="row">
                 <div ng-repeat="product in products" class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
-                    <product-thumbnail></product-thumbnail>
+                    <product-thumbnail product="product"></product-thumbnail>
                 </div>
             </div>
         </div>
